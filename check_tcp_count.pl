@@ -11,7 +11,7 @@ GetOptions('w=i' => \$opt_w, 'c=i' => \$opt_c);
 
 # if option has
 if ($opt_w > 0 && $opt_c > 0){
-    my $count= `netstat | grep tcp | wc -l`;
+    my $count= `/usr/bin/ionice -c2 -n7 /bin/nice -n19 netstat | grep tcp | wc -l`;
     chomp($count);
     my $result_text = "TCP Port count: $count|tcpportcount=$count";
     if ($opt_c <= $count) {
