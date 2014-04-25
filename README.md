@@ -22,6 +22,12 @@ check_tcp_num.pl -w 10000 -c 30000
 Almost allways this script need long time taken.
 Set long timeout to your Nagios commands.
 
+nagios.cfg
+```
+service_check_timeout=120
+```
+
+
 commands.cfg
 ```
 define command {
