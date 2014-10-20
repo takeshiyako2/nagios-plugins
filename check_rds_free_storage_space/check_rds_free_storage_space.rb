@@ -88,12 +88,12 @@ class CheckRDSFreeStorageSpace
 
     ## puts result
     information = " - free space: #{free_space_mb} MB (#{value.truncate}%)|usage=#{usage_mb}MB"
-    if options[:crit] >= value.truncate 
+    if options[:warn] >= value.truncate
+      puts "DISK WARNING" + information
+      exit 1  
+    elsif options[:crit] >= value.truncate
       puts "DISK CRITICAL" + information
       exit 2
-    elsif options[:warn] >= value.truncate
-      puts "DISK WARNING" + information
-      exit 1
     else
     puts "DISK OK" + information
     end
