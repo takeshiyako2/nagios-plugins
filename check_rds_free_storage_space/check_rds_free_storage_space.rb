@@ -25,8 +25,8 @@ OptionParser.new do |opt|
   opt.on("-r", "--cw_region cw_region", "CloudWatch region") { |cw_region| options[:cw_region] = cw_region}
   opt.on("-e", "--rds_region rds_region", "RDS region") { |rds_region| options[:rds_region] = rds_region}
   opt.on("-i", "--db_instance_identifier db_instance_identifier", "DBInstanceIdentifier") { |db_instance_identifier| options[:db_instance_identifier] = db_instance_identifier}
-  opt.on("-w", "--warn WARN", "Nagios warning level") { |warn| options[:warn] = warn.to_i }
-  opt.on("-c", "--crit CRIT", "Nagios critical level") { |crit| options[:crit] = crit.to_i }
+  opt.on("-w", "--warn WARN", "Nagios warning level. warn percent >= current free space percent") { |warn| options[:warn] = warn.to_i }
+  opt.on("-c", "--crit CRIT", "Nagios critical level. crit percent >= current free space percent") { |crit| options[:crit] = crit.to_i }
 
   opt.on_tail("-h", "--help", "Show this message") do
     puts opt

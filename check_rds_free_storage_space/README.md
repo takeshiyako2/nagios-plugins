@@ -19,8 +19,8 @@ Nagios options:
     -e, --rds_region rds_region      RDS region
     -i db_instance_identifier,       DBInstanceIdentifier
         --db_instance_identifier
-    -w, --warn WARN                  Nagios warning level
-    -c, --crit CRIT                  Nagios critical level
+    -w, --warn WARN                  Nagios warning level. warn percent >= current free space percent
+    -c, --crit CRIT                  Nagios critical level. crit percent >= current free space percent
     -h, --help                       Show this message
 ```
 
