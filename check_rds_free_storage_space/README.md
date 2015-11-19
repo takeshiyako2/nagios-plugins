@@ -8,6 +8,8 @@ Amazon RDS free DISK space checker
 
 git clone & sudo bundle
 
+Use IAM policies of AmazonRDSReadOnlyAccess and CloudWatchLogsFullAccess.
+
 # How to use
 
 Check help
